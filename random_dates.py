@@ -27,7 +27,7 @@ def sort_dates(a):
 
 # تولید یک تاریخ رندم
 # نویسنده: ندا
-def date():
+def new_random_date():
   import random
   a={}
   # random.randint(1900,2020)
@@ -41,12 +41,12 @@ def date():
 
 # تولید آرایه ای پر از تاریخ های رندم
 # نویسنده: ندا
-def si(a):
+def create_list_of_dates(a):
   i=0
   b=[]
   c={}
   while i<7:
-    a=date()
+    a=new_random_date()
     #print((i+1), a["year"], a["month"], a["day"])
     b.append(a)
     c.update(a)
@@ -56,7 +56,7 @@ def si(a):
 
 # مرتب سازی (ناقص)
 # نویسنده»: ندا
-def comp (b):
+def sort_list_of_dates (b):
   p=0
   while p<len(b)-1:
     #if b.value("year") in b[p]<b.value("year") in b[p+1]:
@@ -74,7 +74,7 @@ def comp (b):
     p=p+1
   return
 
-def print_dates(arr):
+def print_list_of_dates(arr):
   i=0
   while i<len(arr):
     x = arr[i]
@@ -84,7 +84,7 @@ def print_dates(arr):
 # بخش اصلی (main) برنامه:
 # بعدش اجرای همه فانکشن ها:
 
-a = si( None )
+a = create_list_of_dates( None )
 #sort_dates(a)
-comp(a)
-print_dates(a)
+sort_list_of_dates(a)
+print_list_of_dates(a)
