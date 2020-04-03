@@ -41,7 +41,7 @@ def new_random_date():
 
 # تولید آرایه ای پر از تاریخ های رندم
 # نویسنده: ندا
-def create_list_of_dates(a):
+def create_list_of_dates():
   i=0
   b=[]
   c={}
@@ -84,7 +84,7 @@ def print_list_of_dates(arr):
 # بخش اصلی (main) برنامه:
 # بعدش اجرای همه فانکشن ها:
 
-a = create_list_of_dates( None )
+a = create_list_of_dates()
 #sort_dates(a)
 sort_list_of_dates(a)
 print_list_of_dates(a)
