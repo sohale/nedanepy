@@ -16,28 +16,28 @@ def earlier_than(prev, next):
     return False
 
 # فانکشن مرتب سازی
-def sort_dates(a):
+def sort_dates_sosi(arr):
   i = 0
-  while i < len(a):
-     if earlier_than( a[i+1], a[i] ):
-            t = a[i]
-            a[i] = a[i+1]
-            a[i+1] = t
+  while i < len(arr):
+     if earlier_than( arr[i+1], arr[i] ):
+            t = arr[i]
+            arr[i] = arr[i+1]
+            arr[i+1] = t
             i = -1
      i = i+1
 
 # تولید یک تاریخ رندم
 # نویسنده: ندا
 def new_random_date():
-  a={}
+  obj={}
   # random.randint(1900,2020)
   y=random.randint(1000,1001)
   m=random.randint(1,12)
   d=random.randint(1,30)
-  a.update({"year":y});
-  a.update({"month":m});
-  a.update({"day":d});
-  return a
+  obj.update({"year":y});
+  obj.update({"month":m});
+  obj.update({"day":d});
+  return obj
 
 # تولید آرایه ای پر از تاریخ های رندم
 # نویسنده: ندا
@@ -54,24 +54,24 @@ def create_list_of_dates():
     i=i+1
   return arr
 
-# مرتب سازی (ناقص)
+# مرتب سازی ()
 # نویسنده»: ندا
 def sort_list_of_dates (b):
-  p=0
-  while p<len(b)-1:
-    #if b.value("year") in b[p]<b.value("year") in b[p+1]:
-    #  if b.value("month") in b[p]<b.value("month") in b[p+1]:
-    #    if b.value("day") in b[p]<b.value("day") in b[p+1]:
-    if  earlier_than(b[p+1], b[p]):
-        t = b[p+1]
-        b[p+1] = b[p]
-        b[p] = t
-        p=-1
+  i=0
+  while i<len(b)-1:
+    #if b.value("year") in b[i]<b.value("year") in b[i+1]:
+    #  if b.value("month") in b[i]<b.value("month") in b[i+1]:
+    #    if b.value("day") in b[i]<b.value("day") in b[i+1]:
+    if  earlier_than(b[i+1], b[i]):
+        t = b[i+1]
+        b[i+1] = b[i]
+        b[i] = t
+        i=-1
 
-        #if b[p] ==b[p+1]:
-        #  b.remove(b[p])
-        #p=0
-    p=p+1
+        #if b[i] ==b[i+1]:
+        #  b.remove(b[i])
+        #i=0
+    i=i+1
   return
 
 def print_list_of_dates(arr):
