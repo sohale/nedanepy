@@ -30,6 +30,7 @@ def sort_dates(a):
 def date():
   import random
   a={}
+  # random.randint(1900,2020)
   y=random.randint(1000,1001)
   m=random.randint(1,12)
   d=random.randint(1,30)
@@ -49,7 +50,7 @@ def si(a):
     #print((i+1), a["year"], a["month"], a["day"])
     b.append(a)
     c.update(a)
-    print((i+1),c)
+    #print((i+1),c)
     i=i+1
   return b
 
@@ -74,11 +75,11 @@ def comp (b):
   return
 
 def print_dates(arr):
-  p=0
-  while p<len(arr):
-    x = arr[p]
-    print(p, x["year"], x["month"], x["day"])
-    p=p+1
+  i=0
+  while i<len(arr):
+    x = arr[i]
+    print(i, x["year"], x["month"], x["day"])
+    i=i+1
 
 # بخش اصلی (main) برنامه:
 # بعدش اجرای همه فانکشن ها:
