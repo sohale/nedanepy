@@ -15,7 +15,6 @@ def earlier_than(ic, cc):
     return False
 
 # فانکشن مرتب سازی
-
 def sort_dates(a):
   i = 0
   while i < len(a):
@@ -58,21 +57,33 @@ def si(a):
 # نویسنده»: ندا
 def comp (b):
   p=0
-  while p<len(b):
-    if b.value("year") in b[p]<b.value("year") in b[b+1]:
-      if b.value("month") in b[p]<b.value("month") in b[b+1]:
-        if b.value("day") in b[p]<b.value("day") in b[b+1]:
-          # ?
-          pass
-    if b[p] ==b[p+1]:
-      b.remove(b[p])
+  while p<len(b)-1:
+    #if b.value("year") in b[p]<b.value("year") in b[p+1]:
+    #  if b.value("month") in b[p]<b.value("month") in b[p+1]:
+    #    if b.value("day") in b[p]<b.value("day") in b[p+1]:
+    if  earlier_than(b[p+1], b[p]):
+        t = b[p+1]
+        b[p+1] = b[p]
+        b[p] = t
+        p=-1
 
-      p=0
+        #if b[p] ==b[p+1]:
+        #  b.remove(b[p])
+        #p=0
     p=p+1
   return
+
+def print_dates(arr):
+  p=0
+  while p<len(arr):
+    x = arr[p]
+    print(p, x["year"], x["month"], x["day"])
+    p=p+1
+
 # بخش اصلی (main) برنامه:
 # بعدش اجرای همه فانکشن ها:
 
 a = si( None )
-sort_dates(a)
+#sort_dates(a)
+comp(a)
 print_dates(a)
