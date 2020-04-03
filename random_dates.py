@@ -1,15 +1,16 @@
+import random
 
 # مقایسه ترتیب دو آبجکت تاریخ. برای استفاده در مرتب سازی
 
-def earlier_than(ic, cc):
+def earlier_than(prev, next):
 
-    if ic["year"] < cc["year"]:
+    if prev["year"] < next["year"]:
       return True
 
-    elif ic["year"] == cc["year"] and ic["month"] < cc["month"]:
+    elif prev["year"] == next["year"] and prev["month"] < next["month"]:
       return True
 
-    elif ic["year"] == cc["year"] and ic["month"] == cc["month"] and ic["day"] < cc["day"]:
+    elif prev["year"] == next["year"] and prev["month"] == next["month"] and prev["day"] < next["day"]:
       return True
 
     return False
@@ -28,7 +29,6 @@ def sort_dates(a):
 # تولید یک تاریخ رندم
 # نویسنده: ندا
 def new_random_date():
-  import random
   a={}
   # random.randint(1900,2020)
   y=random.randint(1000,1001)
@@ -43,16 +43,16 @@ def new_random_date():
 # نویسنده: ندا
 def create_list_of_dates():
   i=0
-  b=[]
+  arr=[]
   c={}
   while i<7:
-    a=new_random_date()
-    #print((i+1), a["year"], a["month"], a["day"])
-    b.append(a)
-    c.update(a)
+    obj=new_random_date()
+    #print((i+1), obj["year"], obj["month"], obj["day"])
+    arr.append(obj)
+    c.update(obj)
     #print((i+1),c)
     i=i+1
-  return b
+  return arr
 
 # مرتب سازی (ناقص)
 # نویسنده»: ندا
@@ -84,7 +84,7 @@ def print_list_of_dates(arr):
 # بخش اصلی (main) برنامه:
 # بعدش اجرای همه فانکشن ها:
 
-a = create_list_of_dates()
-#sort_dates(a)
-sort_list_of_dates(a)
-print_list_of_dates(a)
+arr = create_list_of_dates()
+#sort_dates(arr)
+sort_list_of_dates(arr)
+print_list_of_dates(arr)
