@@ -1,3 +1,19 @@
+/*
+To run on PC:
+
+```
+cd nedapy
+python  -m http.server 8000
+```
+
+Then go to: http://localhost:8000/food-app
+
+Or:
+sohale.github.io/nedapy/food-app.html
+
+*/
+
+
 function choose(choices) {
   var index = Math.floor(Math.random() * choices.length);
   return choices[index];

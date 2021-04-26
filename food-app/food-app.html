@@ -1,0 +1,36 @@
+<html>
+     <script>
+        /* JavaScript code */
+        function print(text) {
+           var d = document.getElementById("peygham");
+           d.innerHTML = text;
+        }
+        function input(text) {
+
+        }
+        var d = document.getElementById("peygham");
+
+        function choose(choices) {
+           var index = Math.floor(Math.random() * choices.length);
+           return choices[index];
+        }
+
+        var food = ["استنبلي", "خورشت بادمجان", "ماکاروني", "بيف استروگانف", "کشک و بادمجان", "دلمه", "زرشک پلو با مرغ", "لازانيا", "پيتزا", "خورشت قيمه", "خوراک لوبيا", "آلبالو پلو", "آبگوشت", "گوشت و لوبيا", "قيمه ريزه", "کله گنجشکي", "ماهي", "کتلت", "کباب تابه اي", "آش رشته", "خورشت نعناع جعفري", "خورشت آلوچه", "تن ماهي"]
+        print(choose(food))
+
+        object.addEventListener("change", myScript);
+        var new1=input()
+        food.push(new1)
+        console.log(food)
+
+    </script>
+
+    <body>
+        Food App. By Neda.
+        <div id="peygham" style="">wait</div>
+
+
+        <input type="text" id="foodinput" name="foodinput" value="" onchange="inputchanged"/>
+    </body>
+
+</html>
